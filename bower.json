@@ -1,0 +1,10 @@
+{
+  "name": "fl_Ed",
+  "version": "0.0.0",
+  "dependencies": {
+    "jquery": ">= 1.10.0",
+    "jquery.ui": ">= 1.10.0",
+    "bootstrap": "<= 3.0.0",
+    "font-awesome": "= 3.0.0"
+  }
+}
