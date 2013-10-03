@@ -43,7 +43,7 @@ $(function() {
 
   if (Modernizr.localstorage) {
     // window.localStorage is available!
-    console.log('localStorage.previousSession:')
+    console.log('Querying previous localStorage session:')
     var edx = localStorage.getItem("editor.x");
     var edy = localStorage.getItem("editor.y");
     var edw = localStorage.getItem("editor.w");
@@ -58,10 +58,10 @@ $(function() {
 
     $('#footer_text').text(edw+' ✕ '+edh+' @ '+edx+'x '+edy+'y')
     
-    console.log('\tx-position: '+edx+'px')
-    console.log('\ty-position: '+edy+'px')
-    console.log('\twidth: '+edw+'px')
-    console.log('\theight: '+edh+'px')
+    console.log('\teditor.x: '+edx+'px')
+    console.log('\teditor.y: '+edy+'px')
+    console.log('\teditor.w: '+edw+'px')
+    console.log('\teditor.h: '+edh+'px')
   } else {
     // no native support for HTML5 storage :(
     // maybe try dojox.storage or a third-party solution
