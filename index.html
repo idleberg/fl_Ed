@@ -15,7 +15,7 @@
     <link href="//code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" rel="stylesheet">
 
     <!-- Custom styles for this template & highlighter.js -->
-    <link href="dist/fl_view.min.css" rel="stylesheet">
+    <link href="dist/fl_view.css" rel="stylesheet">
   </head>
 
   <body>
@@ -47,16 +47,28 @@
     </div>
 
     <div class="container">
-      <div class="panel panel-default">
-        <div class="panel-heading">Editor</div>
+      <div class="panel panel-default" id="editor">
+        <div class="panel-heading"><small id="screen_info" class="text-muted"></small></div>
         <div class="panel-body" id="fl_ed">
           <p>
             <span class="text-danger"><strong>fl_Ed</strong></span><br/>
-            <em>&#x3b1;lpha version</em>
+            <em>an &#x3b1;lpha version</em></br>
           </p>
+          <!-- <p><a href="#" class="icon icon-undo"></a> Reset</p> -->
+        </div>
+
+      </div>
+
+    </div><!-- /.container -->
+<!-- 
+    <div class="container">
+      <div class="panel panel-default" id="sound">
+        <div class="panel-heading">Sound</div>
+        <div class="panel-body" id="fl_ed">
+
         </div>
         <div class="panel-footer">
-          <small id="footer_text" class="text-muted"></small>
+          <small id="screen_info" class="text-muted"></small>
         </div>
       </div>
 
