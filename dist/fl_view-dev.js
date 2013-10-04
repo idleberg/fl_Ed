@@ -9,6 +9,7 @@ $(function() {
   var arrowup = $('.arrow-up')
   var credit = $('.credit')
   var editor = $('.panel')
+  var editor_input = $('.editor-input')
   
   navbar.hide();
 
@@ -47,6 +48,13 @@ $(function() {
     }
   });
 
+  editor_input.change(function( event ) {
+    if (supports_html5_storage()) {
+      localStorage.setItem("editor.input", editor_input.val());
+      // console.log("Text input modified to "+editor_input.val())
+    }
+  })
+
   $.urlParam = function(name){
     var results = new RegExp('[\\?&]' + name + '=([^&#]*)').exec(window.location.href);
     if (results) return results[1] || 0;
@@ -58,11 +66,12 @@ $(function() {
     // reset controls
     reset = $.urlParam('reset')
     if (reset == 'true') {
-        console.log('Resetting localStorage')
+        console.log('Reset window.localStorage')
         localStorage.setItem("editor.x", 100);
         localStorage.setItem("editor.y", 100);
         localStorage.setItem("editor.w", 360);
         localStorage.setItem("editor.h", 240);
+        localStorage.setItem("editor.input", '');
     } else {
 
       var ed_x = $.urlParam('editor.x')
@@ -80,6 +89,7 @@ $(function() {
     var ed_y = localStorage.getItem("editor.y");
     var ed_w = localStorage.getItem("editor.w");
     var ed_h = localStorage.getItem("editor.h");
+    var ed_input = localStorage.getItem("editor.input");
     
     for (var i = 0; i < localStorage.length; i++){
           var key = localStorage.key(i)
@@ -97,6 +107,8 @@ $(function() {
     }).show();
 
     screen_info.text(ed_w+'✕'+ed_h+' — '+ed_x+'x '+ed_y+'y')
+
+    editor_input.val(ed_input)
     
 
   } else {
