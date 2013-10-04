@@ -55,6 +55,19 @@ $(function() {
     }
   })
 
+  $('.panel-heading').dblclick(function( event ) { 
+        editor.css({
+          position: "absolute",
+          top: "1%",
+          left: "1%",
+          width: "98%",
+          "max-width": "98%",
+          height: "98%",
+          "max-height": "98%"
+        }).show(); 
+  })
+
+
   $.urlParam = function(name){
     var results = new RegExp('[\\?&]' + name + '=([^&#]*)').exec(window.location.href);
     if (results) return results[1] || 0;
@@ -72,6 +85,8 @@ $(function() {
         localStorage.setItem("editor.w", 360);
         localStorage.setItem("editor.h", 240);
         localStorage.setItem("editor.input", '');
+        // jQuery.param.querystring(window.location.href, '#test');
+        window.location = "http://demo.idleberg.com/fl_Ed/"
     } else {
 
       var ed_x = $.urlParam('editor.x')

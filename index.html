@@ -24,7 +24,7 @@
 
     <div id="hover"><i class="arrow-up icon-chevron-down text-success"></i>
       <!-- Fixed navbar -->
-      <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar navbar-default navbar-fixed-top">
         <div class="container" >
           <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -48,41 +48,38 @@
 
     <div class="container">
       <div class="panel panel-default" id="editor">
-        <div class="panel-heading"><small id="screen_info" class="text-muted"></small></div>
+        <div class="panel-heading">
+        <ul class="list-inline">
+          <li id="screen_info" class="text-muted"></li>
+          <li id="screen_info" class="text-muted pull-right"><a href="#pin"><i class="icon-pushpin icon-pin"></i></a></li>
+          <li id="screen_info" class="text-default pull-right"><a href="?reset=true"><i class="icon-undo icon-reset"></i></a></li>
+        </ul>
+        </div>
         <div class="panel-body" id="fl_ed">
           <p>
-            <span class="text-danger"><strong>fl_Ed</strong></span><br/>
+            <strong class="text-danger">fl_Ed</strong><br/>
             <em>&#x3b1;lpha zero</em></br>
           </p>
           <p>This is an interface experimentation applying techniques such <a href="http://getbootstrap.com">Bootstrap</a>, <a href="http://jquery.com/">JQuery</a>, and <a href="http://diveintohtml5.info/storage.html">HTML5 Storage</a>.</p>
-          <input type="text" class="form-control editor-input" placeholder="Remember me">
+          <p><input type="text" class="form-control editor-input" placeholder="Something to remember"></p>
         </div>
 
       </div>
 
     </div><!-- /.container -->
-   
-    <!-- Playlist --><!-- 
+<!-- 
     <div class="container">
-      <div class="panel panel-default" id="playlist">
-        <div class="panel-heading"><span class="text-default">Playlist</span></div>
+      <div class="panel panel-default" id="sound">
+        <div class="panel-heading">Sound</div>
         <div class="panel-body" id="fl_ed">
-          <p>
-            <span class="text-danger"><strong>Manage your music</strong></span>
-          </p>
-
-          <div class="input-group">
-            
-            <span class="input-group-btn">
-              <button class="btn btn-info" type="button"><i class="icon-play-sign"></i></button>
-            </span>
-            <input type="text" class="form-control" placeholder="URL or service:id">
-          </div>
 
         </div>
+        <div class="panel-footer">
+          <small id="screen_info" class="text-muted"></small>
+        </div>
       </div>
-    </div> -->
 
+    </div><!-- /.container -->
   </div><!-- /.wrap -->
 
   <div id="footer">
