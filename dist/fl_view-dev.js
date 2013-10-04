@@ -63,6 +63,17 @@ $(function() {
         localStorage.setItem("editor.y", 100);
         localStorage.setItem("editor.w", 360);
         localStorage.setItem("editor.h", 240);
+    } else {
+
+      var ed_x = $.urlParam('editor.x')
+      var ed_y = $.urlParam('editor.y')
+      var ed_w = $.urlParam('editor.w')
+      var ed_h = $.urlParam('editor.h')
+
+      if (ed_x) localStorage.setItem("editor.x", ed_x)
+      if (ed_y) localStorage.setItem("editor.y", ed_y)
+      if (ed_w) localStorage.setItem("editor.w", ed_w)
+      if (ed_h) localStorage.setItem("editor.h", ed_h)
     }
 
     var ed_x = localStorage.getItem("editor.x");
