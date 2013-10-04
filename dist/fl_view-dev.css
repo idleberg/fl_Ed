@@ -11,7 +11,7 @@ body {
 }
 
 .panel {
-	min-width: 240px;
+	min-width: 320px;
 	min-height:240px;
 	z-index: 0;
 	opacity: 0.8;
