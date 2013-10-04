@@ -47,9 +47,23 @@ $(function() {
     }
   });
 
+  $.urlParam = function(name){
+    var results = new RegExp('[\\?&]' + name + '=([^&#]*)').exec(window.location.href);
+    if (results) return results[1] || 0;
+  } 
 
   if (supports_html5_storage()) {
     console.log('window.localStorage is available!')
+
+    // reset controls
+    reset = $.urlParam('reset')
+    if (reset == 'true') {
+        console.log('Resetting localStorage')
+        localStorage.setItem("editor.x", 100);
+        localStorage.setItem("editor.y", 100);
+        localStorage.setItem("editor.w", 360);
+        localStorage.setItem("editor.h", 240);
+    }
 
     var ed_x = localStorage.getItem("editor.x");
     var ed_y = localStorage.getItem("editor.y");
