@@ -37,10 +37,11 @@ $(function() {
       credit.finish().fadeOut(3000);
   });
   credit.delay(3000).fadeOut(3000);
+
   
   editor.mousemove(function( event ) {
     screen_info.text(editor.width()+'✕'+editor.height()+' — '+editor.offset().left+'x '+editor.offset().top+'y')
-    if (supports_html5_storage()) {
+    if (use_storage()) {
       localStorage.setItem("editor.x", editor.offset().left);
       localStorage.setItem("editor.y", editor.offset().top);
       localStorage.setItem("editor.w", editor.width());
@@ -49,7 +50,7 @@ $(function() {
   });
 
   editor_input.change(function( event ) {
-    if (supports_html5_storage()) {
+    if (use_storage()) {
       localStorage.setItem("editor.input", editor_input.val());
       // console.log("Text input modified to "+editor_input.val())
     }
@@ -68,12 +69,9 @@ $(function() {
   })
 
 
-  $.urlParam = function(name){
-    var results = new RegExp('[\\?&]' + name + '=([^&#]*)').exec(window.location.href);
-    if (results) return results[1] || 0;
-  } 
+  
 
-  if (supports_html5_storage()) {
+  if (use_storage()) {
     console.log('window.localStorage is available!')
 
     // reset controls

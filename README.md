@@ -8,7 +8,7 @@ Clone repository `git clone https://github.com/idleberg/fl_Ed.git` or download m
 
 ## Usage
 
-Before usage, modified developer files in the `dist`folder should be minified using the build tool `./build.sh` (requires [YUI Compressor](http://yui.github.io/yuicompressor/))
+Before usage, modified developer files in the `dist`folder should be minified using the build tool `tools/build.sh` (requires [YUI Compressor](http://yui.github.io/yuicompressor/))
 
 ## URL Parameters
 
