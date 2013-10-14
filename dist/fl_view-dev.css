@@ -55,6 +55,7 @@ a.icon {
 
 .btn {
 	font-size: 18px;
+	padding: 8px 15px;
 }
 
 .arrow-up {
@@ -67,8 +68,13 @@ a.icon {
 .navbar {
 	display: inline-block;
 	opacity: 0.8;
-	height:180px;
+	height:120px;
 }
+
+.row{
+	margin-top: 10px;
+}
+
 
 #hover {
 	width: 100%;

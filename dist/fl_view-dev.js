@@ -73,10 +73,10 @@ $(function() {
 
   if (use_storage()) {
     console.log('window.localStorage is available!')
+    var ui = []
 
     // reset controls
-    reset = $.urlParam('reset')
-    if (reset == 'true') {
+    if ($.urlParam('reset') == 'true') {
         console.log('Reset window.localStorage')
         localStorage.setItem("editor.x", 100);
         localStorage.setItem("editor.y", 100);
@@ -87,41 +87,46 @@ $(function() {
         window.location = "http://demo.idleberg.com/fl_Ed/"
     } else {
 
-      var ed_x = $.urlParam('editor.x')
-      var ed_y = $.urlParam('editor.y')
-      var ed_w = $.urlParam('editor.w')
-      var ed_h = $.urlParam('editor.h')
+      if ($.urlParam('editor.x')) {
+        ui['editor.x'] = $.urlParam('editor.x');
+        localStorage.setItem("editor.x", ui['editor.x']);
+      }
 
-      if (ed_x) localStorage.setItem("editor.x", ed_x)
-      if (ed_y) localStorage.setItem("editor.y", ed_y)
-      if (ed_w) localStorage.setItem("editor.w", ed_w)
-      if (ed_h) localStorage.setItem("editor.h", ed_h)
+      if ($.urlParam('editor.y')) {
+        ui['editor.y'] = $.urlParam('editor.y');
+        localStorage.setItem("editor.y", ui['editor.y']);
+      }
+
+      if ($.urlParam('editor.w')) {
+        ui['editor.w'] = $.urlParam('editor.w');
+        localStorage.setItem("editor.w", ui['editor.w']);
+      }
+
+      if ($.urlParam('editor.h')) {
+        ui['editor.h'] = $.urlParam('editor.h');
+        localStorage.setItem("editor.h", ui['editor.h']);
+      }
     }
 
-    var ed_x = localStorage.getItem("editor.x");
-    var ed_y = localStorage.getItem("editor.y");
-    var ed_w = localStorage.getItem("editor.w");
-    var ed_h = localStorage.getItem("editor.h");
-    var ed_input = localStorage.getItem("editor.input");
-    
     for (var i = 0; i < localStorage.length; i++){
           var key = localStorage.key(i)
           var val = localStorage.getItem(key)
+          ui[key] = val
           console.log('\t'+key+'='+val)
-      }
+    }
 
     // position .container or .editor
     editor.css({
       position: "absolute",
-      top: ed_y + "px",
-      left: ed_x  + "px",
-      width: ed_w + "px",
-      height: ed_h + "px"
+      top: ui['editor.y'] + "px",
+      left: ui['editor.x']  + "px",
+      width: ui['editor.w'] + "px",
+      height: ui['editor.h'] + "px"
     }).show();
 
-    screen_info.text(ed_w+'✕'+ed_h+' — '+ed_x+'x '+ed_y+'y')
+    screen_info.text(ui['editor.w']+'✕'+ui['editor.h']+' — '+ui['editor.x']+'x '+ui['editor.y']+'y')
 
-    editor_input.val(ed_input)
+    editor_input.val(ui['editor.input'])
     
 
   } else {
