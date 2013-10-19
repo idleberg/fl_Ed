@@ -81,7 +81,7 @@ $(function() {
         localStorage.setItem("editor.x", 100);
         localStorage.setItem("editor.y", 100);
         localStorage.setItem("editor.w", 360);
-        localStorage.setItem("editor.h", 240);
+        localStorage.setItem("editor.h", 270);
         localStorage.setItem("editor.input", '');
         // jQuery.param.querystring(window.location.href, '#test');
         window.location = "http://demo.idleberg.com/fl_Ed/"
