@@ -6,9 +6,9 @@ Watch a [demo](http://idleberg.github.io/fl_Ed/)!
 
 Clone repository `git clone https://github.com/idleberg/fl_Ed.git` or download manually
 
-## Usage
+## Building
 
-Before usage, modified developer files in the `dist`folder should be minified using the build tool `./build.sh` (requires [YUI Compressor](http://yui.github.io/yuicompressor/))
+Make sure to run [Grunt](http://gruntjs.com/) when editing `index.html` or any file from the `src` folder. This will validate HTML, and minify both CSS and JavaScript.
 
 ## URL Parameters
 
