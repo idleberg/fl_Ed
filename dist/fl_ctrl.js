@@ -1,12 +1,1 @@
-var use_storage = function(name) {
-	try {
-	  return 'localStorage' in window && window['localStorage'] !== null;
-	} catch (e) {
-	  return false;
-	}
-}
-
-$.urlParam = function(name){
-    var results = new RegExp('[\\?&]' + name + '=([^&#]*)').exec(window.location.href);
-    if (results) return results[1] || 0;
-  } 
+var use_storage=function(){try{return"localStorage"in window&&null!==window.localStorage}catch(a){return!1}};$.urlParam=function(a){var b=new RegExp("[\\?&]"+a+"=([^&#]*)").exec(window.location.href);return b?b[1]||0:void 0};

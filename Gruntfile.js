@@ -27,14 +27,15 @@ module.exports = function(grunt){
         uglify: {
 		    build: {
 		        files: {
-		            'dist/fl_view.js': ['dist/fl_view-dev.js']
+		            'dist/fl_ctrl.js': 'dist/fl_ctrl-dev.js',
+		            'dist/fl_view.js': 'dist/fl_view-dev.js'
 		        }
 		    }
 		},
 
 		// CSS
 		csslint: {
-		  strict: {
+		  lax: {
 		    src: 'dist/fl_view-dev.css',
 		  }
 		},
@@ -52,12 +53,12 @@ module.exports = function(grunt){
 		        tasks: ['htmlhint']
 		    },
 		    js: {
-		        files: ['dist/fl_view-dev.js'],
+		        files: ['dist/fl_ctrl-dev.js', 'dist/fl_view-dev.js'],
 		        tasks: ['uglify']
 		    },
 		    css: {
 		        files: ['dist/fl_view-dev.css'],
-		        tasks: ['csslint', 'cssmin']
+		        tasks: ['cssmin']
 		    }
 		}
 
