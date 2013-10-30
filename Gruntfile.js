@@ -3,8 +3,8 @@ module.exports = function(grunt){
 	require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
 
 	var jsFiles = [
-        'dist/dev-fl_ctrl.js',
-        'dist/dev-fl_view.js'
+        'src/dev-fl_ctrl.js',
+        'src/dev-fl_view.js'
     ];
 
     grunt.initConfig({
@@ -32,21 +32,21 @@ module.exports = function(grunt){
         uglify: {
 		    build: {
 		        src: jsFiles,
-    			dest: 'dist/fl_Ed.min.js'
+    			dest: 'build/fl_Ed.min.js'
 		    }
 		},
 
 		// CSS
 		csslint: {
 		  lax: {
-		    src: 'dist/dev-fl_view.css',
+		    src: 'src/dev-fl_view.css',
 		  }
 		},
 
 		cssmin: {
             build: {
-                src: 'dist/dev-fl_view.css',
-                dest: 'dist/fl_Ed.min.css'
+                src: 'src/dev-fl_view.css',
+                dest: 'build/fl_Ed.min.css'
             }
         },
 
@@ -56,11 +56,11 @@ module.exports = function(grunt){
 		        tasks: ['htmlhint']
 		    },
 		    js: {
-		        files: ['dist/dev-fl_ctrl.js', 'dist/dev-fl_view.js'],
+		        files: ['src/dev-fl_ctrl.js', 'src/dev-fl_view.js'],
 		        tasks: ['uglify']
 		    },
 		    css: {
-		        files: ['dist/dev-fl_view.css'],
+		        files: ['src/dev-fl_view.css'],
 		        tasks: ['cssmin']
 		    }
 		}
