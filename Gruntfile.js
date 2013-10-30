@@ -69,4 +69,8 @@ module.exports = function(grunt){
 
     grunt.registerTask('default', 'watch');
 
+    // Aliases
+    grunt.registerTask('css', 'cssmin');
+    grunt.registerTask('js', 'uglify');
+
 };
