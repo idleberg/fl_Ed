@@ -5,6 +5,7 @@ module.exports = function(grunt){
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
+        // HTML
         htmlhint: {
 		    build: {
 		        options: {
@@ -22,12 +23,20 @@ module.exports = function(grunt){
 		    }
 		},
 
+		// JavaScript
         uglify: {
 		    build: {
 		        files: {
 		            'dist/fl_view.js': ['dist/fl_view-dev.js']
 		        }
 		    }
+		},
+
+		// CSS
+		csslint: {
+		  strict: {
+		    src: 'dist/fl_view-dev.css',
+		  }
 		},
 
 		cssmin: {
@@ -48,12 +57,12 @@ module.exports = function(grunt){
 		    },
 		    css: {
 		        files: ['dist/fl_view-dev.css'],
-		        tasks: ['cssmin']
+		        tasks: ['csslint', 'cssmin']
 		    }
 		}
 
     });
 
-    grunt.registerTask('default', []);
+    grunt.registerTask('default', 'watch');
 
 };

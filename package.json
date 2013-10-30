@@ -1,15 +1,17 @@
 {
     "name" : "fl_Ed",
-    "version" : "0.0.1",
+    "version" : "0.0.0",
     "author" : "Jan T. Sott",
+    "license" : "MIT",
     "private" : true,
 
     "devDependencies" : {
-        "grunt" :                   "~0.4.0",
-        "grunt-contrib-cssmin":         "*",
-        "grunt-contrib-uglify":         "*",
-        "grunt-contrib-watch":         "*",
-        "grunt-htmlhint":               "*",
-        "matchdep":                     "*"
+        "grunt":                    "~0.4.0",
+        "grunt-contrib-csslint":    "*",
+        "grunt-contrib-cssmin":     "*",
+        "grunt-contrib-uglify":     "*",
+        "grunt-contrib-watch":      "*",
+        "grunt-htmlhint":   "*",
+        "matchdep":                 "*"
     } 
 }
