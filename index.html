@@ -10,9 +10,9 @@
     <title>fl_Ed</title>
 
     <!-- Core CSS -->
-    <link href="//netdna.bootstrapcdn.com/bootswatch/3.0.0/flatly/bootstrap.min.css" rel="stylesheet">
-    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.min.css" rel="stylesheet">
-    <link href="//code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" rel="stylesheet">
+    <link href="http://netdna.bootstrapcdn.com/bootswatch/3.0.0/flatly/bootstrap.min.css" rel="stylesheet">
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.min.css" rel="stylesheet">
+    <link href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" rel="stylesheet">
 
     <!-- Custom styles for this template & highlighter.js -->
     <link href="build/fl_Ed.min.css" rel="stylesheet">
@@ -28,34 +28,62 @@
         <div class="container" >
 
           <ul class="nav nav-pills">
-            <li class="active"><a href="#music">Music</a></li>
-            <li><a href="#presets">Presets</a></li>
-            <li><a href="#controls">Controls</a></li>
+            <li><a href="#music" data-toggle="tab">Music</a></li>
+            <li><a href="#preset" data-toggle="tab">Presets</a></li>
+            <li><a href="#controls" data-toggle="tab">Controls</a></li>
           </ul>
 
+          <!-- Tab panes -->
+          <div class="tab-content">
 
-<div class="row">
-  <div class="col-lg-4">
-    <div class="input-group">
-      <div class="input-group-btn">
-        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">SoundCloud <span class="caret"></span></button>
-        <ul class="dropdown-menu">
-          <li><a href="#">SoundCloud</a></li>
-          <li><a href="#">Mixcloud</a></li>
-          <li><a href="#">YouTube</a></li>
-          <li class="divider"></li>
-          <li><a href="#">Link to audio file</a></li>
-        </ul>
-      </div><!-- /btn-group -->
-      <input type="text" class="form-control" placeholder="URL or service:id">
-    </div><!-- /input-group -->
-  </div><!-- /.col-lg-6 -->
-  <div class="col-lg-8">
-    <button type="button" class="btn btn-success"><i class="fa fa-play-circle"></i> Play</button>
-    <button type="button" class="btn btn-success"><i class="fa fa-plus-circle"></i> Queue</button>
-    <button type="button" class="btn btn-danger"><i class="fa fa-list-ol"></i> Playlist</button>
-  </div><!-- /.col-lg-6 -->
-</div><!-- /.row -->
+            <!-- Music -->
+            <div class="tab-pane active" id="music">
+              <div class="row">
+                <div class="col-lg-4">
+                  <div class="input-group">
+                    <div class="input-group-btn tab-content">
+                      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">SoundCloud <span class="caret"></span></button>
+                      <ul class="dropdown-menu">
+                        <li><a href="#">SoundCloud</a></li>
+                        <li><a href="#">Mixcloud</a></li>
+                        <li><a href="#">YouTube</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Link to audio file</a></li>
+                      </ul>
+                    </div><!-- /btn-group -->
+                    <input type="text" class="form-control" placeholder="URL or service:id">
+                  </div><!-- /input-group -->
+                </div><!-- /.col-lg-6 -->
+                <div class="col-lg-8">
+                  <button type="button" class="btn btn-success"><i class="fa fa-play-circle"></i> Play</button>
+                  <button type="button" class="btn btn-success"><i class="fa fa-plus-circle"></i> Queue</button>
+                  <button type="button" class="btn btn-danger"><i class="fa fa-list-ol"></i> Playlist</button>
+                </div><!-- /.col-lg-6 -->
+              </div><!-- /.row -->
+            </div>
+
+            <!-- Presets -->
+            <div class="tab-pane" id="preset">
+              <div class="row">
+                <div class="col-lg-12">
+                  <button type="button" class="btn btn-success"><i class="fa fa-cloud-upload"></i> Load</button>
+                  <button type="button" class="btn btn-success"><i class="fa fa-cloud-download"></i> Save</button>
+                </div><!-- /.col-lg-6 -->
+              </div><!-- /.row -->
+              
+            </div>
+            <!-- Controls -->
+            <div class="tab-pane" id="controls">
+              <div class="row">
+                <div class="col-lg-12">
+                  <a href="?reset=true" role="button" class="btn btn-danger"><i class="fa fa-undo"></i> Reset window</a>
+                </div><!-- /.col-lg-6 -->
+              </div><!-- /.row -->
+            </div>
+          </div>
+
+
+
 
         </div><!-- /container -->
       </div>
@@ -67,8 +95,6 @@
         <div class="panel-heading">
         <ul class="list-inline">
           <li id="screen_info" class="text-muted"></li>
-          <li class="text-muted pull-right"><a href="#pin"><i class="fa fa-thumb-tack"></i></a></li>
-          <li class="text-default pull-right"><a href="?reset=true"><i class="fa fa-undo"></i></a></li>
         </ul>
         </div>
         <div class="panel-body" id="fl_ed">
@@ -105,9 +131,9 @@
   </div>
 
     <!-- Core JavaScript -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="build/fl_Ed.min.js"></script>
   </body>
 </html>

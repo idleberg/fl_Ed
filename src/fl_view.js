@@ -1,6 +1,11 @@
 $(function() {
   // initial settings
   // fl_init()
+
+  $('#myTab a').click(function (e) {
+    e.preventDefault()
+    $(this).tab('show')
+  })
   
   var hover = $('#hover')
   var footer = $('#footer')
@@ -84,7 +89,7 @@ $(function() {
         localStorage.setItem("editor.h", 270);
         localStorage.setItem("editor.input", '');
         // jQuery.param.querystring(window.location.href, '#test');
-        window.location = "http://demo.idleberg.com/fl_Ed/"
+        window.location = "index.html"
     } else {
 
       if ($.urlParam('editor.x')) {
