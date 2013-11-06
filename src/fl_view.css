@@ -30,6 +30,16 @@ ul, ol {
 	color:inherit;
 }
 
+.panel-fullscreen {
+	position: "absolute",
+	top: "1%",
+	left: "1%",
+	width: "98%",
+	"max-width": "98%",
+	height: "98%",
+	"max-height": "98%"
+}
+
 .icon {
 	text-decoration: none;
 }
