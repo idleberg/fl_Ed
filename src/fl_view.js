@@ -62,20 +62,8 @@ $(function() {
   })
 
   $('.panel-heading').dblclick(function( event ) { 
-        // editor.css({
-        //   position: "absolute",
-        //   top: "1%",
-        //   left: "1%",
-        //   width: "98%",
-        //   "max-width": "98%",
-        //   height: "98%",
-        //   "max-height": "98%"
-        // }).show();
         $(this).toggleClass('panel-fullscreen');
   })
-
-
-  
 
   if (use_storage()) {
     console.log('window.localStorage is available!')
