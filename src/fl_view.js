@@ -62,6 +62,7 @@ $(function() {
   })
 
   $('.panel-heading').dblclick(function( event ) { 
+      console.log('Setting editor to fullscreen');
       editor.toggleClass('panel-fullscreen');
   })
 
