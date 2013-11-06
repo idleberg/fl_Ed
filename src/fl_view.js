@@ -71,7 +71,7 @@ $(function() {
         //   height: "98%",
         //   "max-height": "98%"
         // }).show();
-        $(this).toggleClass('panel-fullscreen').show();
+        $(this).toggleClass('panel-fullscreen');
   })
 
 
