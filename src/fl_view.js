@@ -62,7 +62,7 @@ $(function() {
   })
 
   $('.panel-heading').dblclick(function( event ) { 
-        $(this).toggleClass('panel-fullscreen');
+      editor.toggleClass('panel-fullscreen');
   })
 
   if (use_storage()) {
