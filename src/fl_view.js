@@ -62,17 +62,19 @@ $(function() {
   })
 
   $('.panel-heading').dblclick(function( event ) { 
-      console.log('Setting editor to fullscreen');
-      // editor.css({
-      //     position: "absolute",
-      //     top: "1%",
-      //     left: "1%",
-      //     width: "98%",
-      //     "max-width": "98%",
-      //     height: "98%",
-      //     "max-height": "98%"
-      //   }).show();
-      editor.toggleClass('panel-fullscreen');
+      editor.css({
+          position: "absolute",
+          top: "1%",
+          left: "1%",
+          width: "98%",
+          "max-width": "98%",
+          height: "98%",
+          "max-height": "98%"
+        }).show();
+
+        editor.delay(1000).css();
+
+      // editor.toggleClass('panel-fullscreen');
   })
 
   if (use_storage()) {
