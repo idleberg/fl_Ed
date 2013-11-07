@@ -1,6 +1,8 @@
 # fl_Ed
 
-Watch a [demo](http://idleberg.github.io/fl_Ed/)!
+Work-in-progress editor, stilfar from anything productive.
+
+Watch a [live demo](http://idleberg.github.io/fl_Ed/)!
 
 ## Installation
 
