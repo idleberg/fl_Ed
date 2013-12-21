@@ -6,6 +6,16 @@ $(function() {
     e.preventDefault()
     $(this).tab('show')
   })
+
+  // $('#reset-window-lock').click(function() {
+  //   if (this.checked) {
+  //     console.log('unlocking')
+  //     $('#reset-window').removeAttr('disabled');
+  //   } else {
+  //     console.log('locking')
+  //     $('#reset-window').attr('disabled', true);
+  //   }
+  // })
   
   var hover = $('#hover')
   var footer = $('#footer')
@@ -148,5 +158,4 @@ $(function() {
       $(this).removeClass('panel-muted').addClass('panel-default')
   });
 
-  
 });
