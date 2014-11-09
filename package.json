@@ -14,5 +14,8 @@
         "grunt-htmlhint":           "*",
         "grunt-notify":             "*",
         "matchdep":                 "*"
-    } 
+    },
+   "scripts": {
+    "postinstall": "bower install"
+  }
 }
