@@ -7,6 +7,6 @@ var use_storage = function(name) {
 }
 
 $.urlParam = function(name){
-    var results = new RegExp('[\\?&]' + name + '=([^&#]*)').exec(window.location.href);
-    if (results) return results[1] || 0;
-  } 
+	var results = new RegExp('[\\?&]' + name + '=([^&#]*)').exec(window.location.href);
+	if (results) return results[1] || 0;
+} 
