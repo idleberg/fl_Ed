@@ -10,6 +10,27 @@ var jshint    = require('gulp-jshint');
 var uglify    = require('gulp-uglify');
 
 
+var scripts = [
+  'bower_components/jquery-ui/jquery-ui.min.js',
+  // 'bower_components/angular/angular.min.js',
+  // 'bower_components/ngstorage/ngStorage.min.js',
+  'bower_components/bootstrap/dist/js/bootstrap.min.js',
+  'bower_components/jasny-bootstrap/dist/js/jasny-bootstrap.min.js',
+  // 'bower_components/semantic-ui/dist/semantic.min.js',
+
+  'src/js/fl_ctrl.js',
+  'src/js/fl_view.js'
+];
+
+var styles = [
+  'bower_components/jquery-ui/themes/smoothness/jquery-ui.min.css',
+  'bower_components/bootstrap/dist/css/bootstrap.min.css',
+  'bower_components/jasny-bootstrap/dist/css/jasny-bootstrap.min.css',
+  // 'bower_components/wtf-forms/wtf-forms.css',
+  'bower_components/font-awesome/css/font-awesome.min.css',
+  'src/css/fl_view.css'
+]
+
 /*
  * Task combos
  */
@@ -80,15 +101,7 @@ gulp.task('csslint', function() {
 
 gulp.task('cssmin', ['csslint'], function() {
 
-  gulp.src([
-    // 'bower_components/semantic-ui/dist/semantic.min.css',
-    'bower_components/jquery-ui/themes/smoothness/jquery-ui.min.css',
-    'bower_components/bootstrap/dist/css/bootstrap.min.css',
-    'bower_components/jasny-bootstrap/dist/css/jasny-bootstrap.min.css',
-    'bower_components/wtf-forms/wtf-forms.css',
-    'bower_components/font-awesome/css/font-awesome.min.css',
-    'src/css/fl_view.css'
-  ])
+  gulp.src(styles)
   .pipe(concat('fl_ed.min.css'))
   .pipe(cssmin())
   .pipe(gulp.dest('dist/css/'))
@@ -110,17 +123,7 @@ gulp.task('jshint', function() {
 
 gulp.task('uglify', ['jshint'], function() {
 
-  gulp.src([
-    'bower_components/jquery-ui/jquery-ui.min.js',
-    // 'bower_components/angular/angular.min.js',
-    // 'bower_components/ngstorage/ngStorage.min.js',
-    'bower_components/bootstrap/dist/js/bootstrap.min.js',
-    'bower_components/jasny-bootstrap/dist/js/jasny-bootstrap.min.js',
-    // 'bower_components/semantic-ui/dist/semantic.min.js',
-
-    'src/js/fl_ctrl.js',
-    'src/js/fl_view.js'
-  ])
+  gulp.src(scripts)
   .pipe(uglify())
   .pipe(concat('fl_ed.min.js'))
   .pipe(gulp.dest('dist/js/'))
@@ -129,14 +132,7 @@ gulp.task('uglify', ['jshint'], function() {
 
 gulp.task('cssconc', function() {
 
-  gulp.src([
-    'bower_components/jquery-ui/themes/smoothness/jquery-ui.min.css',
-    'bower_components/bootstrap/dist/css/bootstrap.min.css',
-    'bower_components/jasny-bootstrap/dist/css/jasny-bootstrap.min.css',
-    'bower_components/wtf-forms/wtf-forms.css',
-    'bower_components/font-awesome/css/font-awesome.min.css',
-    'src/css/fl_view.css'
-  ])
+  gulp.src(styles)
   .pipe(concat('fl_ed.min.css'))
   .pipe(gulp.dest('dist/css/'))
 
@@ -144,17 +140,7 @@ gulp.task('cssconc', function() {
 
 gulp.task('jsconc', function() {
 
-  gulp.src([
-    'bower_components/jquery-ui/jquery-ui.min.js',
-    // 'bower_components/angular/angular.min.js',
-    // 'bower_components/ngstorage/ngStorage.min.js',
-    'bower_components/bootstrap/dist/js/bootstrap.min.js',
-    'bower_components/jasny-bootstrap/dist/js/jasny-bootstrap.min.js',
-    // 'bower_components/semantic-ui/dist/semantic.min.js',
-
-    'src/js/fl_ctrl.js',
-    'src/js/fl_view.js'
-  ])
+  gulp.src(scripts)
   .pipe(concat('fl_ed.min.js'))
   .pipe(gulp.dest('dist/js/'))
 
