@@ -89,7 +89,7 @@ gulp.task('cssmin', ['csslint'], function() {
     'bower_components/font-awesome/css/font-awesome.min.css',
     'src/css/fl_view.css'
   ])
-  .pipe(concat('fl_Ed.min.css'))
+  .pipe(concat('fl_ed.min.css'))
   .pipe(cssmin())
   .pipe(gulp.dest('dist/css/'))
 
@@ -122,7 +122,7 @@ gulp.task('uglify', ['jshint'], function() {
     'src/js/fl_view.js'
   ])
   .pipe(uglify())
-  .pipe(concat('fl_Ed.min.js'))
+  .pipe(concat('fl_ed.min.js'))
   .pipe(gulp.dest('dist/js/'))
 
 });
@@ -137,7 +137,7 @@ gulp.task('cssconc', function() {
     'bower_components/font-awesome/css/font-awesome.min.css',
     'src/css/fl_view.css'
   ])
-  .pipe(concat('fl_Ed.min.css'))
+  .pipe(concat('fl_ed.min.css'))
   .pipe(gulp.dest('dist/css/'))
 
 });
@@ -155,7 +155,7 @@ gulp.task('jsconc', function() {
     'src/js/fl_ctrl.js',
     'src/js/fl_view.js'
   ])
-  .pipe(concat('fl_Ed.min.js'))
+  .pipe(concat('fl_ed.min.js'))
   .pipe(gulp.dest('dist/js/'))
 
 });
