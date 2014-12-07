@@ -4,7 +4,8 @@ var default_x = 100,
     default_y = 100,
     default_w = 800,
     default_h = 600,
-    default_input = '';
+    default_input  = '',
+    default_checks = false;
 
 var use_storage = function() {
 	try {
@@ -21,6 +22,8 @@ var set_defaults = function() {
 	localStorage.setItem("editor.h", default_h);
 	localStorage.setItem("editor.input", default_input);
 	localStorage.setItem("editor.fullscreen", false);
+	localStorage.setItem("editor.check1", default_checks);
+	localStorage.setItem("editor.check2", default_checks);
 };
 
 var update_pos = function(editor, position, message) {

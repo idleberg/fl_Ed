@@ -30,6 +30,7 @@ $(function() {
       navbar       = $('.navbar'),
       arrowup      = $('.arrow-up'),
       credit       = $('.credit'),
+      checks       = $('input[type="checkbox"]'),
       editor       = $('#editor'),
       editor_input = $('.editor-input');
   
@@ -79,6 +80,20 @@ $(function() {
     if (use_storage()) {
       localStorage.setItem("editor.input", editor_input.val());
       if(debug) console.info("Typing…");
+    }
+  });
+
+
+  checks.click(function() { 
+    var name = $(this).attr('name');
+    // console.log(name)
+
+    if ($(this).is(':checked')) {
+      if(debug) console.info("Checked "+name);
+      localStorage.setItem("editor."+name, true);
+    } else {
+      if(debug) console.info("Unchecked "+name);
+      localStorage.setItem("editor."+name, false);
     }
   });
 
@@ -179,7 +194,12 @@ $(function() {
 
     editor_input.val(ui['editor.input']);
 
-    
+    if (ui['editor.check1'] == 'true') {
+      $('input[name="check1"]').attr('checked', 'checked');
+    }
+    if (ui['editor.check2'] == 'true') {
+      $('input[name="check2"]').attr('checked', 'checked');
+    }
     
 
   } else {
