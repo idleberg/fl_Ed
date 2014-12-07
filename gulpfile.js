@@ -122,7 +122,7 @@ gulp.task('uglify', ['jshint'], function() {
     'src/js/fl_view.js'
   ])
   .pipe(uglify())
-  .pipe(concat('fl_ed.min.js'))
+  .pipe(concat('fl_Ed.min.js'))
   .pipe(gulp.dest('dist/js/'))
 
 });
