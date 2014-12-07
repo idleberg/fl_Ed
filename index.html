@@ -1,146 +1,105 @@
-﻿<!DOCTYPE html>
-<html lang="en" ng-app="fledApp">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="shortcut icon" href="http://s.visbot.net/ico/favicon.png">
+<!DOCTYPE html>
+<html lang="en" ng-app="flApp">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width = device-width">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="shortcut icon" href="http://s.visbot.net/ico/favicon.png">
 
-    <title>fl_Ed</title>
+  <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
 
-    <!-- Core CSS -->
-    <link href="http://netdna.bootstrapcdn.com/bootswatch/3.0.3/flatly/bootstrap.min.css" rel="stylesheet">
-    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
-    <link href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" rel="stylesheet">
+  <title>fl_Ed</title>
 
-    <!-- Custom styles for this template & highlighter.js -->
-    <link href="dist/fl_Ed.min.css" rel="stylesheet">
-  </head>
+  <script type="text/javascript" src="dist/js/jquery.min.js"></script>
 
-  <body>
+  <!-- Core CSS -->
+  <link href='http://fonts.googleapis.com/css?family=Fira+Sans:300,400,500' rel='stylesheet' type='text/css'>
+  <link href="dist/css/fl_Ed.min.css" rel="stylesheet">
+</head>
 
-  <div id="wrap">
+<body>
 
-    <div id="hover"><i class="arrow-up fa fa-chevron-down text-success"></i>
-      <!-- Fixed navbar -->
-      <div class="navbar navbar-default navbar-fixed-top">
-        <div class="container" >
 
-          <ul class="nav nav-pills">
-            <li><a href="#music" data-toggle="tab">Music</a></li>
-            <li><a href="#preset" data-toggle="tab">Presets</a></li>
-            <li><a href="#controls" data-toggle="tab">Controls</a></li>
+  <div id="container-fluid">
+
+    <nav class="navbar navbar navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+        <div id="navbar">
+        <ul class="nav navbar-nav navbar-right pull-right">
+            <li><a href="#"><i class="fa fa-2x fa-cog" data-toggle="offcanvas" data-target="#configMenu" data-canvas="body"></i></a></li>
           </ul>
-
-          <!-- Tab panes -->
-          <div class="tab-content">
-
-            <!-- Music -->
-            <div class="tab-pane active" id="music">
-              <div class="row">
-                <div class="col-lg-4">
-                  <div class="input-group">
-                    <div class="input-group-btn tab-content">
-                      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">SoundCloud <span class="caret"></span></button>
-                      <ul class="dropdown-menu">
-                        <li><a href="#">SoundCloud</a></li>
-                        <li><a href="#">Mixcloud</a></li>
-                        <li><a href="#">YouTube</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">Link to audio file</a></li>
-                      </ul>
-                    </div><!-- /btn-group -->
-                    <input type="text" class="form-control" placeholder="URL or service:id">
-                  </div><!-- /input-group -->
-                </div><!-- /.col-lg-6 -->
-                <div class="col-lg-8">
-                  <button type="button" class="btn btn-success"><i class="fa fa-play-circle"></i> Play</button>
-                  <button type="button" class="btn btn-success"><i class="fa fa-plus-circle"></i> Queue</button>
-                  <button type="button" class="btn btn-danger"><i class="fa fa-list-ol"></i> Playlist</button>
-                </div><!-- /.col-lg-6 -->
-              </div><!-- /.row -->
-            </div>
-
-            <!-- Presets -->
-            <div class="tab-pane" id="preset">
-              <div class="row">
-                <div class="col-lg-12">
-                  <button type="button" class="btn btn-success"><i class="fa fa-cloud-upload"></i> Load</button>
-                  <button type="button" class="btn btn-success"><i class="fa fa-cloud-download"></i> Save</button>
-                </div><!-- /.col-lg-6 -->
-              </div><!-- /.row -->
-              
-            </div>
-            <!-- Controls -->
-            <div class="tab-pane" id="controls">
-              <div class="row">
-                <div class="col-lg-12 btn-group" data-toggle="buttons">
-                  <a href="?reset=true" role="button" class="btn btn-danger"><i class="fa fa-undo"></i> Reset all</a>
-                  <!-- <label class="btn btn-danger" id="reset-window-lock" >
-                    <input type="checkbox"> <i class="fa fa-lock"></i>
-                  </label>
-                  <label class="btn btn-danger" id="reset-window" disabled="disabled">
-                    <input type="checkbox"> Reset all
-                  </label> -->
-                </div><!-- /.col-lg-6 -->
-              </div><!-- /.row -->
-            </div>
-
-          </div>
-
-
-
-
-        </div><!-- /container -->
+        </div><!--/.nav-collapse -->
       </div>
+    </nav>
 
-    </div>
+    <div class="container" ng-controller="flEditor">
 
-    <div class="container">
       <div class="panel panel-default" id="editor">
         <div class="panel-heading">
-        <ul class="list-inline">
-          <li id="screen_info" class="text-muted"></li>
-        </ul>
+          <!-- <button type="button" class="lock-editor pull-left" aria-hidden="true"><i class="fa fa-fw fa-circle-o"></i></button>&nbsp; -->
+          <span id="screen_info" class="text-muted"></span>
+          <button type="button" class="close" aria-hidden="true"><i class="fa fa-times"></i></button>
         </div>
         <div class="panel-body" id="fl_ed">
-          <p>
-            <strong class="text-danger">fl_Ed</strong><br />
-            <em>&#x3b1;lpha zero</em><br />
-          </p>
-          <p>This is an interface experimentation applying techniques such <a href="http://getbootstrap.com">Bootstrap</a>, <a href="http://jquery.com/">jQuery</a>, and <a href="http://diveintohtml5.info/storage.html">HTML5 Storage</a>.</p>
-          <p><input type="text" class="form-control editor-input" placeholder="Something to remember"></p>
-        </div>
+
+<!--           <nav class="navmenu navmenu-default pull-left" role="navigation">
+
+            <ul class="nav navmenu-nav">
+             <li><a href="#">Link</a></li>
+             <li><a href="#">Link</a></li>
+             <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu navmenu-nav" role="menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Link</a></li>
+          </ul>
+        </nav> -->
+
+        <p>
+          <strong class="text-danger">fl_Ed</strong><br />
+          <em>&#x3b1;lpha zero</em><br />
+        </p>
+        <p>This is an interface experimentation applying techniques such <a href="http://getbootstrap.com">Bootstrap</a>, <a href="http://jquery.com/">jQuery</a>, and <a href="http://diveintohtml5.info/storage.html">HTML5 Storage</a>.</p>
+        <p><input type="text" class="form-control editor-input" placeholder="Something to remember"></p>
+
+        <span class="text-muted">You can <a class="export_data">export</a> all window settings</span>
+
+
 
       </div>
 
-    </div><!-- /.container -->
-<!-- 
-    <div class="container">
-      <div class="panel panel-default" id="sound">
-        <div class="panel-heading">Sound</div>
-        <div class="panel-body" id="fl_ed">
-
-        </div>
-        <div class="panel-footer">
-          <small id="screen_info" class="text-muted"></small>
-        </div>
-      </div>
-
-    </div><-- /.container -->
-  </div><!-- /.wrap -->
-
-  <div id="footer">
-    <div class="container">
-      <p class="credit text-center">Fork me on <a href="https://github.com/idleberg/fl_Ed"><i class="fa fa-github"></i> GitHub</a></p>
     </div>
+
   </div>
 
-    <!-- Core JavaScript -->
-    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="dist/fl_Ed.min.js"></script>
-  </body>
+</div><!-- /.container -->
+
+</div><!-- /.container-fluid -->
+
+<nav id="configMenu" class="navmenu navmenu-default navmenu-fixed-right offcanvas" role="navigation">
+  <h1 class="navmenu-brand">Configuration</h1>
+  <ul class="nav navmenu-nav">
+    <li><a href="#" class="toggle-editor"><i class="fa fa-fw fa-toggle-on"></i> Show/Hide Editor</a></li>
+    <li><a href="#" class="toggle-fullscreen"><i class="fa fa-fw fa-toggle-on"></i> Toggle Fullscreen</a></li>
+    <li><a href="?reset=1"><i class="fa fa-fw fa-toggle-on"></i> Restore Defaults</a></li>
+    <li><a class="export_data"><i class="fa fa-fw fa-floppy-o"></i> Export Settings</a></li>
+    <li><a href="#" class="visible-xs close-menu"><i class="fa fa-fw fa-close"></i> Close Menu</a></li>
+    <li role="presentation" class="divider"></li>
+    <li><a href="http://github.com/idleberg/fl_Ed" target="_blank"><i class="fa fa-fw fa-github-alt"></i> GitHub</a></li>
+  </ul>
+</nav>
+
+<!-- Core JavaScript -->
+<script src="https://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/sha1.js"></script>
+<script type="text/javascript" src="dist/js/fl_Ed.min.js" defer></script>
+</body>
 </html>
