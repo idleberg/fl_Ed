@@ -34,7 +34,7 @@ var update_pos = function(editor, position, message) {
 	  localStorage.setItem("editor.h", editor.height());
 	}
 	
-	if(message && debug) console.log(message);
+	if(message && debug) console.info(message);
 };
 
 $.urlParam = function(name){

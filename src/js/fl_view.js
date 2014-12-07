@@ -2,6 +2,10 @@ $(function() {
   // initial settings
   // fl_init()
 
+  console.log('fl_Ed | αlpha zero');
+  console.log('https://github.com/idleberg/fl_Ed');
+  console.log('');
+
   $('#myTab a').click(function (e) {
     e.preventDefault();
     $(this).tab('show');
@@ -71,7 +75,7 @@ $(function() {
   editor_input.keyup(function() {
     if (use_storage()) {
       localStorage.setItem("editor.input", editor_input.val());
-      if(debug) console.log("Typing…");
+      if(debug) console.info("Typing…");
     }
   });
 
@@ -83,7 +87,7 @@ $(function() {
       } else {
         localStorage.setItem("editor.fullscreen", false);
       }
-      if(debug) console.log("Toggle fullscreen");
+      if(debug) console.info("Toggle fullscreen");
   });
 
   // todo: dry!
@@ -95,7 +99,7 @@ $(function() {
       } else {
         localStorage.setItem("editor.fullscreen", false);
       }
-      if(debug) console.log("Toggle fullscreen");
+      if(debug) console.info("Toggle fullscreen");
   });
 
   $( window ).resize(function() {
@@ -103,12 +107,12 @@ $(function() {
   });
 
   if (use_storage()) {
-    console.log('\tlocalStorage is available!');
+    console.info('\tlocalStorage is available!');
     var ui = [];
 
     // reset controls
     if ($.urlParam('reset') == 'true' || $.urlParam('reset') == '1') {
-        console.log('Reset window.localStorage');
+        console.info('Reset window.localStorage');
         // localStorage.setItem("editor.x", default_x);
         // localStorage.setItem("editor.y", default_y);
         // localStorage.setItem("editor.w", default_w);
@@ -176,7 +180,7 @@ $(function() {
     
 
   } else {
-    console.log('no native support for HTML5 storage :(');
+    console.warn('no native support for HTML5 storage :(');
 
     screen_info.text('Editor');
   }
@@ -201,7 +205,7 @@ $(function() {
     base64 = window.btoa(json);
     hash = CryptoJS.SHA1(base64).toString().substring(0,7);
     file = 'fl_Ed-'+hash+'.json';
-    console.log('Exporting settings to '+file);
+    console.info('Exporting settings to '+file);
 
     var dl = document.createElement('a');
     dl.setAttribute('href', 'data:application/octet-stream;base64,' + base64);
@@ -211,7 +215,7 @@ $(function() {
 
   $('.close').click(function (event) {
     $(editor).fadeOut('fast');
-    if(debug) console.log('Hide editor');
+    if(debug) console.info('Hide editor');
   });
 
     $('.lock-editor','.unlock-editor').click(function (event) {
@@ -227,7 +231,7 @@ $(function() {
 
   $('.toggle-editor').click(function (event) {
     $(editor).fadeToggle('fast');
-    if(debug) console.log('Toggle editor');
+    if(debug) console.info('Toggle editor');
   });
 
   $('.close-menu').click(function (event) {
