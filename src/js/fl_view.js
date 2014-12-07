@@ -2,6 +2,9 @@ $(function() {
   // initial settings
   // fl_init()
 
+  // init Bootstrap tooltips
+  $('[data-toggle="tooltip"]').tooltip();
+
   console.log('fl_Ed | αlpha zero');
   console.log('https://github.com/idleberg/fl_Ed');
   console.log('');

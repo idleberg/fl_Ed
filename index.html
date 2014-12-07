@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <!-- <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script> -->
+  <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
 
   <title>fl_Ed</title>
 
@@ -28,7 +28,7 @@
       <div class="container-fluid">
         <div id="navbar">
         <ul class="nav navbar-nav navbar-right pull-right">
-            <li><a href="#"><i class="fa fa-2x fa-cog" data-toggle="offcanvas" data-target="#configMenu" data-canvas="body"></i></a></li>
+            <li data-toggle="tooltip" data-placement="left" title="Configuration Menu"><a href="#" ><i class="fa fa-2x fa-cog" data-toggle="offcanvas" data-target="#configMenu" data-canvas="body"></i></a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -39,8 +39,8 @@
       <div class="panel panel-default" id="editor">
         <div class="panel-heading">
           <!-- <button type="button" class="lock-editor pull-left" aria-hidden="true"><i class="fa fa-fw fa-circle-o"></i></button>&nbsp; -->
-          <span id="screen_info" class="text-muted"></span>
-          <button type="button" class="close" aria-hidden="true"><i class="fa fa-times"></i></button>
+          <span id="screen_info" class="text-muted" data-toggle="tooltip" data-placement="right" title="Window size &amp; position"></span>
+          <button type="button" class="close" aria-hidden="true" data-toggle="tooltip" data-placement="left" title="Close"><i class="fa fa-times"></i></button>
         </div>
         <div class="panel-body" id="fl_ed">
 
@@ -67,12 +67,21 @@
           <strong class="text-danger">fl_Ed</strong><br />
           <em>&#x3b1;lpha zero</em><br />
         </p>
-        <p>This is an interface experimentation applying techniques such <a href="http://getbootstrap.com">Bootstrap</a>, <a href="http://jquery.com/">jQuery</a>, and <a href="http://diveintohtml5.info/storage.html">HTML5 Storage</a>.</p>
-        <p><input type="text" class="form-control editor-input" placeholder="Something to remember"></p>
+        <hr/>
+        <p>This is an interface experimentation applying modern web technologies. To see what it does, try the following:</p>
 
-        <span class="text-muted">You can <a class="export_data">export</a> all window settings</span>
+        <p>
+          <ol>
+            <li>Drag and resize this window</li>
+            <li>Type anything in the field below</li>
+            <li>Refresh your browser</li>
+          </ol>
+        </p>
 
+        <p><input type="text" class="form-control editor-input" placeholder="Something to remember" data-toggle="tooltip" data-placement="top" title="Anything you type here will be remembered after a page refresh"></p>
 
+        <hr/>
+        <p class="small text-muted">Built upon <a href="http://getbootstrap.com">Bootstrap</a>, <a href="http://jquery.com/">jQuery</a>, and <a href="http://diveintohtml5.info/storage.html">HTML5 Storage</a></p>
 
       </div>
 
