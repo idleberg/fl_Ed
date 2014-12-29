@@ -1,5 +1,8 @@
 # fl_Ed
 
+[![Travis](https://img.shields.io/travis/idleberg/fl_Ed.svg?style=flat-square)](https://travis-ci.org/idleberg/fl_Ed)
+[![David](https://img.shields.io/david/dev/idleberg/fl_Ed.svg?style=flat-square)](https://david-dm.org/idleberg/fl_Ed#info=devDependencies)
+
 Work-in-progress editor, stilfar from anything productive.
 
 *Watch a [live demo](http://idleberg.github.io/fl_Ed/)!*
@@ -14,7 +17,7 @@ Make sure to run [Grunt](http://gruntjs.com/) when editing `index.html` or any f
 
 ## URL Parameters
 
-You can control the editor by passing URL parameters (e.g. path/to/fl_ED?param1=hello&param2=world)
+You can control the editor by passing URL parameters (e.g. path/to/fl_Ed?param1=hello&param2=world)
 
 `reset=true`  
 Reset the localStorage, cannot be combined with other parameters
