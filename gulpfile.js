@@ -1,13 +1,14 @@
-var meta = require('./package.json');
-
-var del       = require('del');
-var bower     = require('gulp-bower');
-var concat    = require('gulp-concat');
-var csslint   = require('gulp-csslint');
-var cssmin    = require('gulp-cssmin');
-var gulp      = require('gulp');
-var jshint    = require('gulp-jshint');
-var uglify    = require('gulp-uglify');
+var meta      = require('./package.json'),
+    del       = require('del'),
+    bower     = require('gulp-bower'),
+    cache     = require('gulp-cached'),
+    concat    = require('gulp-concat'),
+    csslint   = require('gulp-csslint'),
+    cssmin    = require('gulp-cssmin'),
+    gulp      = require('gulp'),
+    jshint    = require('gulp-jshint'),
+    uglify    = require('gulp-uglify'),
+    watch     = require('gulp-watch');
 
 
 var scripts = [
@@ -90,6 +91,7 @@ gulp.task('csslint', function() {
   return gulp.src([
     'src/css/fl_view.css'
   ])
+  .pipe(cache('linting'))
   .pipe(csslint({
     // .panel-fullscreen requires !important
     'important': false
@@ -115,6 +117,7 @@ gulp.task('jshint', function() {
     'src/js/fl_ctrl.js',
     'src/js/fl_view.js'
   ])
+  .pipe(cache('linting'))
   .pipe(jshint())
   .pipe(jshint.reporter())
 
@@ -144,4 +147,13 @@ gulp.task('jsconc', function() {
   .pipe(concat('fl_ed.min.js'))
   .pipe(gulp.dest('dist/js/'))
 
+});
+
+// Watch task
+gulp.task('watch', function () {
+   gulp.watch([
+            scripts,
+            styles
+         ],
+         ['lint'])
 });
