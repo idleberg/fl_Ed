@@ -4,17 +4,16 @@
 [![Travis](https://img.shields.io/travis/idleberg/fl_Ed.svg?style=flat-square)](https://travis-ci.org/idleberg/fl_Ed)
 [![David](https://img.shields.io/david/dev/idleberg/fl_Ed.svg?style=flat-square)](https://david-dm.org/idleberg/fl_Ed#info=devDependencies)
 
-Work-in-progress editor, stilfar from anything productive.
+Work-in-progress editor, still far from anything productive.
 
 *Watch a [live demo](http://idleberg.github.io/fl_Ed/)!*
 
-## Installation
 
-Clone repository `git clone https://github.com/idleberg/fl_Ed.git` or download manually
+1. Clone repository `git clone https://github.com/idleberg/fl_Ed.git`
+2. Install Node packages `npm install`
+3. Run `gulp make` to build assets
 
-## Building
-
-Make sure to run [Grunt](http://gruntjs.com/) when editing `index.html` or any file from the `src` folder. This will validate HTML, and minify both CSS and JavaScript.
+Use a linter on the files you work on `gulp watch`.
 
 ## URL Parameters
 
