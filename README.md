@@ -1,5 +1,6 @@
 # fl_Ed
 
+[![The MIT License](https://img.shields.io/badge/license-MIT-orange.svg?style=flat-square)](http://opensource.org/licenses/MIT)
 [![Travis](https://img.shields.io/travis/idleberg/fl_Ed.svg?style=flat-square)](https://travis-ci.org/idleberg/fl_Ed)
 [![David](https://img.shields.io/david/dev/idleberg/fl_Ed.svg?style=flat-square)](https://david-dm.org/idleberg/fl_Ed#info=devDependencies)
 
