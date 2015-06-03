@@ -13,23 +13,28 @@ var meta      = require('./package.json'),
 
 var scripts = [
   'bower_components/jquery-ui/jquery-ui.min.js',
-  // 'bower_components/angular/angular.min.js',
   // 'bower_components/ngstorage/ngStorage.min.js',
   'bower_components/bootstrap/dist/js/bootstrap.min.js',
-  'bower_components/jasny-bootstrap/dist/js/jasny-bootstrap.min.js',
-  // 'bower_components/semantic-ui/dist/semantic.min.js',
+  // 'bower_components/jasny-bootstrap/dist/js/jasny-bootstrap.min.js',
+  'bower_components/jasny-bootstrap/js/offcanvas.js',
 
   'src/js/fl_ctrl.js',
   'src/js/fl_view.js'
 ];
 
 var styles = [
-  'bower_components/jquery-ui/themes/smoothness/jquery-ui.min.css',
   'bower_components/bootstrap/dist/css/bootstrap.min.css',
   'bower_components/jasny-bootstrap/dist/css/jasny-bootstrap.min.css',
   // 'bower_components/wtf-forms/wtf-forms.css',
   'bower_components/font-awesome/css/font-awesome.min.css',
+  'bower_components/jquery-ui/themes/smoothness/jquery-ui.min.css',
   'src/css/fl_view.css'
+]
+
+var less = [
+  'bower_components/bootstrap/less/bootstrap.less',
+  'bower_components/jasny-bootstrap/less/offcanvas.less',
+  'bower_components/font-awesome/less/font-awesome.less',
 ]
 
 /*
