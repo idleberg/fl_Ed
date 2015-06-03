@@ -8,6 +8,7 @@ Work-in-progress editor, still far from anything productive.
 
 *Watch a [live demo](http://idleberg.github.io/fl_Ed/)!*
 
+## Building
 
 1. Clone repository `git clone https://github.com/idleberg/fl_Ed.git`
 2. Install Node packages `npm install`
