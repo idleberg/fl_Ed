@@ -101,7 +101,7 @@ gulp.task('csslint', function() {
     // .panel-fullscreen requires !important
     'important': false
   }))
-  .pipe(csslint.reporter())
+  .pipe(csslint.formatter())
 
 });
 
